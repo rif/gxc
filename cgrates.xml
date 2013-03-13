@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<document type="cgrates/xml">
+
+  <section name="global" description="Global Settings">
+    <param name="datadb_type" value="redis"/>
+    <param name="datadb_host" value="127.0.0.1:6379"/>
+  </section>
+
+  <section name="balancer" description="Balancer Settings">
+    <param name="enabled" value="false"/>
+    <param name="rpc_encoding" value="json"/>
+  </section>
+
+  <section name="rater" description="Rater Settings">
+    <param name="listen" value="172.16.1.32:2000"/>
+    <param name="rpc_encoding" value="json"/>
+  </section>
+
+  <section name="session_manager" description="SM Settings">
+      <param name="enabled" value="true"/>
+      <param name="switch_type" value="freeswitch"/>
+      <param name="debit_period" value="5"/>
+      <param name="rater" value="172.16.1.32:2000"/>
+      <param name="rpc_encoding" value="json"/>
+      <section name="FirstSwitch" type="freeswitch">
+        <param name="host" value="172.16.1.1:8021"/>
+        <param name="password" value="ClueCon"/>
+      </section>
+  </section>
+</document>
